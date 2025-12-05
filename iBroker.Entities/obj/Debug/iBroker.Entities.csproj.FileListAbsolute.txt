@@ -1,0 +1,5 @@
+E:\PSP\Clients\JJProperties\SourceCode\iBroker\iBroker.Entities\bin\Debug\iBroker.Entities.dll
+E:\PSP\Clients\JJProperties\SourceCode\iBroker\iBroker.Entities\bin\Debug\iBroker.Entities.pdb
+E:\PSP\Clients\JJProperties\SourceCode\iBroker\iBroker.Entities\obj\Debug\iBroker.Entities.csproj.CoreCompileInputs.cache
+E:\PSP\Clients\JJProperties\SourceCode\iBroker\iBroker.Entities\obj\Debug\iBroker.Entities.dll
+E:\PSP\Clients\JJProperties\SourceCode\iBroker\iBroker.Entities\obj\Debug\iBroker.Entities.pdb
