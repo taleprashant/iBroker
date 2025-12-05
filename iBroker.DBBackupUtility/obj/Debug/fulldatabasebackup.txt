@@ -1,0 +1,494 @@
+-- MySQL dump 10.13  Distrib 8.0.27, for Win64 (x86_64)
+--
+-- Host: localhost    Database: ibrokerdb
+-- ------------------------------------------------------
+-- Server version	8.0.27
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `broker`
+--
+
+DROP TABLE IF EXISTS `broker`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `broker` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `Name` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PhoneNo1` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PhoneNo2` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Location` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `City` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `State` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `broker`
+--
+
+LOCK TABLES `broker` WRITE;
+/*!40000 ALTER TABLE `broker` DISABLE KEYS */;
+INSERT INTO `broker` VALUES (1,'Prashant Tale','8888849047','9130009047',NULL,'Tingre Nagar','Pune',NULL),(2,'Vishal Gupta','8877665544',NULL,NULL,'Vishrantwadi',NULL,NULL);
+/*!40000 ALTER TABLE `broker` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `customer`
+--
+
+DROP TABLE IF EXISTS `customer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `customer` (
+  `FirstName` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `LastName` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PhoneNo1` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PhoneNo2` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Salutation` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FlatNo` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Society` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Landmark` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Pincode` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Location` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `City` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `State` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Country` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `DOB` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `AddressOther` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `IsBroker` tinyint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=103 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `customer`
+--
+
+LOCK TABLES `customer` WRITE;
+/*!40000 ALTER TABLE `customer` DISABLE KEYS */;
+INSERT INTO `customer` VALUES ('Prashant','Tale','8888849047','9130009047','prashant.tale@live.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,1,NULL,0),('Shital','Tale','9130009047','','shital.tale@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,2,NULL,0),('Prashant','Tale','8888849047','','prashant.tale@live.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,3,NULL,0),('Jay','Shah','9233445566','','jay.shah@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,4,NULL,0),('Vihan','Sharma','2233445566','','vihan@sharma.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,5,NULL,0),('Neer','Tale','1234567890','','neer@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,6,NULL,0),('Prashant','Tale','8888849047','','prashant.tale@live.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,NULL,0),('','Sing','','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,NULL,0),('Nikki','','9604523031','','',NULL,'','','','','','Pune','Maharashtra','India',NULL,9,NULL,0),('Rakesh',' Sawant','8381003492','','',NULL,'','','','','','Pune','Maharashtra','India',NULL,10,NULL,0),('Rakesh  Sawant','','8381003492','','',NULL,'','','','','','Pune','Maharashtra','India',NULL,11,NULL,0),('Khade','','8888849047','','',NULL,'','','','','','Pune','Maharashtra','India',NULL,12,'',0),('Yogesh','','9881901986','','',NULL,'','','','','','Pune','Maharashtra','India',NULL,13,'',0),('Khade','','8888849047','','',NULL,'','','','','','Pune','Maharashtra','India',NULL,14,NULL,0),('Tamdhikar','','9730572314','','',NULL,'','','','','','Pune','Maharashtra','India',NULL,15,NULL,0),('Dr. Patil','','9156797171','','',NULL,'','','','','','Pune','Maharashtra','India',NULL,16,'',0),('Vikas Kamble','','7276366250','','',NULL,'','','','','','Pune','Maharashtra','India',NULL,17,NULL,0),('Tanmaya Kar','','7894588340','','tanmayakar@gmail.com',NULL,'','','','','','Pune','Maharashtra','India',NULL,18,NULL,0),('Sawant ','','9921116639','','sawantgj@gmail.com',NULL,'','','','','','Pune','Maharashtra','India',NULL,19,NULL,0),('Randeep Singh','','8099246815','','randeepsingh32888@gmail.com',NULL,'','','','','','Pune','Maharashtra','India',NULL,20,NULL,0),('Amit (Hotel Wala) Kunder','','9167051754','','',NULL,'','','','','','Pune','Maharashtra','India',NULL,21,'',0),('Shrikanr Raskar','','9923777557','','',NULL,'','','','','','Pune','Maharashtra','India',NULL,22,NULL,0),('Shrikant','Raskar','9923777557','','',NULL,'','','','','','Pune','Maharashtra','India',NULL,23,NULL,0),('Sumit Day','','9717687345','','',NULL,'','','','','','Pune','Maharashtra','India',NULL,24,NULL,0),('KHARADI BROKER ABRAR KHAN','','8669085922','','',NULL,'','','','','','Pune','Maharashtra','India',NULL,25,NULL,0),('DINKAR PATIL FRIENDS VINOD','','7757014517','','',NULL,'','','','','','Pune','Maharashtra','India',NULL,26,NULL,0),('VINOD CHOTIA','','7757014517','','',NULL,'','','','','','Pune','Maharashtra','India',NULL,27,'',0),('VAISLEY',NULL,'8379911700','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,28,'AYUB SHAIK OFFICE ',0),('ABHI',NULL,'8237678532','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,29,'',0),('PUJA',NULL,'9763467581','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,30,'LIVING IN ATRIA SOCIET',0),('ROHIT HASE',NULL,'8767127549','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,31,'MANCHAR PUNE',0),('ANAND',NULL,'9923726183','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,32,'TINGARE NAGAR',0),('Anuroop Gajbhiye',NULL,'9823383984','9146190594','foranuroopgajbhiye@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,33,'',0),('Rahul ',NULL,'8087084662','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,34,'rahulparge0707@gmail.com',0),('Sandeep Gunjal',NULL,'9921962796','','sandeepgunjal27@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,35,'',0),('Vijay tatewar',NULL,'9922075451','','tatewar.v17@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,36,'',0),('kulkarni',NULL,'9886159413','','dr.n.k.kulkarni358@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,37,'',0),('Karim Kamruddin',NULL,'9604770272','','karim.kamruddin@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,38,'',0),('Sachin Kale',NULL,'7030953022','','sachin.kale@towellengineering.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,39,'',0),('Vikash Kumar',NULL,'9096418529','','vikash.upadhya@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,40,'',0),('Pranav ',NULL,'8888288390','9881115187','pranav@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,41,'FULE NAGAR  NEAR RTO OFFICE',0),('Sanjay Sayyed',NULL,'7666232845','','sanjayyadav83548@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,42,'',0),('Pratik Jain 10am',NULL,'9561064419','','pratiks46@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,43,'',0),('Ravi Mishra',NULL,'9833745734','','mishrravi@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,44,'',0),('Sharda Garkemukhu',NULL,'9833470418','','sharda.garke@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,45,'',0),('Mr Shaikh',NULL,'8484818637','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,46,'',0),('Swapnil Waghmare',NULL,'8888119908','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,47,'',0),('Vinay Tandale',NULL,'8390242024','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,48,'',0),('Swapnil Shirke',NULL,'7719802422','','swapnilshirke924@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,49,'',0),('Pramod Dolas',NULL,'9822096725','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,50,'',0),('Rahul ',NULL,'9921997005','','rahulsgavhane@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,51,'',0),('Bhalerao prabhakar at 5pm',NULL,'9545866489','','bhaleraoprabhakar0@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,52,'',0),('Nitin Pawar at 10.30am',NULL,'9921676566','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,53,'',0),('Dipti Radiya at 3.30pm',NULL,'9049988702','','dipti.radiya@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,54,'',0),('Vivek Sarode',NULL,'8208422491','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,55,'',0),('Avinash Gupta',NULL,'8902156930','','gupta.avinash5084@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,56,'',0),('SHIVAM Kumar',NULL,'8003263659','','shivam.kumar987@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,57,'',0),('Bro Gogia',NULL,'9850080099','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,58,'',0),('Bro Amit JAdhav',NULL,'9271716606','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,59,'',0),('Aishwarya Vangane',NULL,'8421909256','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,60,'',0),('Rohan Gour at 12pm',NULL,'9422469999','','liquid1092@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,61,'',0),('Kuldeep lokhande at 12pm',NULL,'9922055415','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,62,'',0),('Trupti',NULL,'9623471748','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,63,'',0),('Darshan Joshi',NULL,'9372883385','','darshanjoshi9@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,64,'',0),('Garima Pal',NULL,'9717370471','','garimapal06@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,65,'',0),('Rohit ',NULL,'8975725775','','rohit.nep@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,66,'',0),('Sanjay Addam at 3pm',NULL,'7385657666','','nehaaddam@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,67,'',0),('Girish Ghatge',NULL,'9637961400','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,68,'',0),('Mangesh Bhosale',NULL,'9923208221','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,69,'',0),('Suman kumar',NULL,'8185921618','','sumans473@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,70,'',0),('Rakesh',NULL,'9764404067','','hasurkar28@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,71,'',0),('Maitri at 11am',NULL,'9820921301','','buchmaitri0405@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,72,'',0),('MAyur ',NULL,'8208470224','','mayur.j@pangulftech.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,73,'',0),('Datta JAdhav at12.30 pm',NULL,'8983500874','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,74,'',0),('Dhruv ',NULL,'9443101947','','dhruvsanadi@ymail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,75,'',0),('AJAY',NULL,'8007479626','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,76,'R KPURAM SOCIETY',0),('SREEJI SALIN',NULL,'7249572584','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,77,'TINGARE NAGAR',0),('UJWALA SAWANT',NULL,'9930608380','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,78,'ROAD NO.13',0),('REENA AGARWAL',NULL,'8888810074','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,79,'DIGHI',0),('DHIRAJ BANSAL',NULL,'9222222768','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,80,'TINGARE NAGAR  PREVES ATRIA PANDE TENENT ATRIA B1/507',0),('Gajanan khotre',NULL,'9112412151','','gajanankhotre@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,81,'',0),('Deepak Kumar',NULL,'8237331219','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,82,'',0),('kalpesh ',NULL,'9921986437','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,83,'',0),('Shinu Saladallu',NULL,'9881798528','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,84,'',0),('Shubham',NULL,'8208305845','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,85,'',0),('Nitin Kadam',NULL,'9021929286','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,86,'',0),('Khandelwal at 10.30',NULL,'9822487889','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,87,'',0),('Sunita chavan 10am',NULL,'8263965009','','sunitachavan1607@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,88,'',0),('satish joshi at 10.30am',NULL,'9850010069','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,89,'',0),('Dheeraj',NULL,'9890197702','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,90,'',0),('Nikhil Kamble',NULL,'9665850258','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,91,'',0),('Rajesh Kathare',NULL,'7020145221','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,92,'',0),('Ranjit Navghare 4pm',NULL,'9767935748','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,93,'',0),('Asmita',NULL,'9168159393','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,94,'',0),('Tushar Munot',NULL,'9822941071','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,95,'',0),('Bablu Jadhav Grace Real Estate',NULL,'9028399221','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,96,'',0),('Baneshwar Raut',NULL,'9673095599','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,97,'',0),('Tarun',NULL,'8975821220','7796899549','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,98,'',0),('M.t.dutta',NULL,'9823380217','','dutta.milankumar@gmail.com',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,99,'',0),('Saurabh Paul',NULL,'9101881805','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,100,'',0),('Narayan',NULL,'9823444058','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,101,'',0),('Sudhir Punia',NULL,'9949130414','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,102,'',0);
+/*!40000 ALTER TABLE `customer` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lead`
+--
+
+DROP TABLE IF EXISTS `lead`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `lead` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `TransactionType` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `PropertyType` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `PropertySubType` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `MinBudget` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `MaxBudget` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `MinArea` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `MaxArea` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FloorPreference` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `WashroomCount` int DEFAULT NULL,
+  `BalconyCount` int DEFAULT NULL,
+  `Lift` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Parking` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FacingDirection` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `RoadFacing` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Location` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Pincode` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `City` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Bedrooms` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ClientId` int NOT NULL,
+  `IsActive` tinyint(1) NOT NULL DEFAULT '1',
+  `Source` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `SocietyPreference` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Remark` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FurnitureStatus` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `CreatedDate` date DEFAULT NULL,
+  `RequiredRentFor` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=99 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `lead`
+--
+
+LOCK TABLES `lead` WRITE;
+/*!40000 ALTER TABLE `lead` DISABLE KEYS */;
+INSERT INTO `lead` VALUES (5,'Buy','Residential','Apartment','4000000','5000000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2',7,0,NULL,NULL,NULL,NULL,NULL,NULL),(6,'Buy','Residential','Apartment','15000','15000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2',8,0,NULL,NULL,NULL,NULL,NULL,NULL),(7,'Buy','Residential','Apartment','4000000','4000000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Dhanori',NULL,NULL,'1',9,1,NULL,NULL,NULL,NULL,NULL,NULL),(8,'Buy','Residential','Apartment','400000','4500000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'2',10,0,'Direct Client','','',',,',NULL,NULL),(9,'Buy','Residential','Apartment','400000','4500000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'2',11,1,'Direct Client','','',',,',NULL,NULL),(10,'Rent','Residential','Apartment','11000','11000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',12,1,'Direct Client','','',',,NonFurnished','2022-01-08',',,'),(11,'Buy','Residential','Apartment','0','3200000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',13,1,'Direct Client','','',',,','2022-01-18',',,'),(12,'Rent','Residential','Apartment','11000','11000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',14,0,'Direct Client','','',',,',NULL,NULL),(13,'Rent','Residential','Apartment','8000','10000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',15,1,'Direct Client','','',',,NonFurnished',NULL,NULL),(14,'Buy','Residential','Apartment','5500000','6000000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'2',16,1,'Direct Client','Shri Ram Classic','',',,','2022-01-12',',,'),(15,'Buy','Residential','Apartment','5000000','5500000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'2',17,1,'Reference','','Broker Client',',,',NULL,NULL),(16,'Rent','Residential','Apartment','10000','15000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Dhanori',NULL,NULL,'2',18,1,'Magicbricks','Brahma Sky City','Bed and Wardrobe must',',,',NULL,NULL),(17,'Buy','Residential','Apartment','5000000','7500000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'2,2.5,3',19,1,'Magicbricks','Atria','Atria 2BHK 1450sqft 48 Lacs',',,',NULL,NULL),(18,'Rent','Residential','Apartment','8000','11000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',20,1,'Magicbricks','','1BHK For Family Army Officer',',,',NULL,NULL),(19,'Buy','Residential','Apartment','2100000','2400000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'0',21,1,'Reference','','',',,','2022-01-22',',,'),(20,'Buy','Residential','Apartment','3500000','400000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'2',22,1,'Direct Client','Atria A1-203','',',,',NULL,NULL),(21,'Buy','Residential','Apartment','3500000','4000000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'2',23,0,'Reference','Atria A1/202','',',,',NULL,NULL),(22,'Rent','Residential','Apartment','12000','14000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',24,1,'Reference','','1BHK Furnished flat','FullyFurnished,,',NULL,NULL),(23,'Rent','Residential','Apartment','4500000','500000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'2',25,1,'WhatsApp','ATRIA B1/507','',',,NonFurnished',NULL,NULL),(24,'Buy','Residential','Apartment','200000','2500000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',26,1,'Reference','GANGOTRI','HE WILL COME ON SUNDAY',',,NonFurnished',NULL,NULL),(25,'Buy','Residential','Apartment','1500000','2300000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',27,1,'Reference','GANGOTRI','FROM DINKAR PATIL  ',',,NonFurnished','2022-01-08',',,'),(26,'Rent','Residential','Apartment','10000','12000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'2',30,1,'Reference','ATRIA ','',',,NonFurnished','2022-01-08',',Bachelor,'),(27,'Rent','Residential','Apartment','10000','12000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'0,2',31,0,'Reference','ATRIA B1/507','TOKEN RECEIVED RS . 5K  (  SECURITY ATRIA SOCIETY',',,NonFurnished','2022-01-08',',,'),(28,'Buy','Residential','Apartment','2500000','2800000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',32,1,'Magicbricks','ATRIA A2/203','REVIST  ATRIA A2/203 ',',,NonFurnished','2022-01-08',',,'),(29,'Rent','Residential','Apartment','8000','10000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',33,1,'Magicbricks','','','FullyFurnished,,','2022-01-10',',Bachelor,'),(30,'Buy','Residential','Apartment','5000000','5200000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Kharadi',NULL,NULL,'2',34,1,'Direct Client','Rohan Abhilasha','Wagholi',',,','2022-01-10',',,'),(31,'Buy','Residential','Apartment','2500000','3000000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar, Dhanori',NULL,NULL,'1',35,1,'Magicbricks','','',',,','2022-01-10',',,'),(32,'Buy','Commercial','Shop','3500000','4500000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'',36,1,'Magicbricks','','',',,','2022-01-10',',,'),(33,'Buy','Residential','Apartment','3800000','4000000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'2',37,1,'Magicbricks','Atria','',',,','2022-01-10',',,'),(34,'Buy','Residential','Apartment','500000','5500000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL,'2',38,1,'Magicbricks','Rohan Abhilasha','2BHK in wagholi',',,','2022-01-10',',,'),(35,'Buy','Residential','Apartment','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',39,1,'Magicbricks','R K Puram','',',,','2022-01-10',',,'),(36,'Buy','Residential','Apartment','5000000','5500000',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'2',40,1,'Magicbricks','','',',,','2022-01-11',',,'),(37,'Buy','Commercial','Shop','4500000','6000000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'',41,1,'Magicbricks','','','FullyFurnished,,','2022-01-11',',,'),(38,'Buy','Residential','Apartment','2500000','3000000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar, Dhanori',NULL,NULL,'1',42,1,'Magicbricks','','',',,','2022-01-11',',,'),(39,'Buy','Residential','Apartment','31000','35000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Viman Nagar',NULL,NULL,'3',43,1,'Magicbricks','','','FullyFurnished,SemiFurnished,','2022-01-11','Family,,'),(40,'Buy','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL,'1',44,1,'Direct Client','','wagholi',',,','2022-01-12',',,'),(41,'Rent','Residential','Apartment','20000','35000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Viman Nagar',NULL,NULL,'2,2.5,3',45,1,'Magicbricks','','',',,','2022-01-12','Family,,'),(42,'Buy','Commercial','Shop','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'',46,1,'Direct Client','','',',,','2022-01-12',',,'),(43,'Buy','Residential','Apartment','3000000','4500000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'2',47,1,'Reference','Atria','',',,','2022-01-12',',,'),(44,'Buy','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',48,1,'Direct Client','Gangotri','',',,','2022-01-12',',,'),(45,'Buy','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Dhanori',NULL,NULL,'1',49,1,'Magicbricks','','number not in service',',,','2022-01-12',',,'),(46,'Buy','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',50,0,'Direct Client','Gangotri','Send photos on whatsapp',',,','2022-01-12',',,'),(47,'Buy','Commercial','Shop','5000000','6000000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'',51,1,'Magicbricks','','',',,','2022-01-12',',,'),(48,'Buy','Residential','Apartment','7500000','8000000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Vishrantwadi',NULL,NULL,'2',52,1,'Magicbricks','Mahalaxmi Vihar','',',,','2022-01-12',',,'),(49,'Buy','Residential','Apartment','3500000','4000000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1,2',53,1,'Direct Client','','',',,','2022-01-12',',,'),(50,'Buy','Residential','Apartment','800000','9500000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar, Vishrantwadi',NULL,NULL,'3',54,1,'Magicbricks','','',',,','2022-01-13',',,'),(51,'Rent','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'2',55,1,'Direct Client','Atria','',',,','2022-01-13',',,'),(52,'Buy','Residential','Apartment','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Dhanori',NULL,NULL,'2',56,1,'Magicbricks','Mayur Kilbil','',',,','2022-01-13',',,'),(53,'Rent','Residential','Apartment','0','25000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Viman Nagar',NULL,NULL,'3',57,1,'Magicbricks','','',',SemiFurnished,','2022-01-14',',Bachelor,'),(54,'Buy','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'2',58,1,'Broker','','',',,','2022-01-14',',,'),(55,'Buy','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'2',59,1,'Broker','','',',,','2022-01-14',',,'),(56,'Buy','Residential','Apartment','0','2000000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'0',60,1,'Magicbricks','','',',,','2022-01-14',',,'),(57,'Rent','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Shashtri Nagar',NULL,NULL,'1',61,1,'Magicbricks','hermes heritage','','FullyFurnished,SemiFurnished,','2022-01-15','Family,,'),(58,'Buy','Residential','Apartment','0','2800000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',62,1,'Magicbricks','Gangotri','',',,','2022-01-15',',,'),(59,'Rent','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL,'1',63,0,'Direct Client','Atria','',',,','2022-01-15',',,'),(60,'Rent','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Shashtri Nagar',NULL,NULL,'1',64,1,'Magicbricks','Hermes Heritage','Leave in couple',',,','2022-01-15',',Bachelor,'),(61,'Rent','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',65,0,'Magicbricks','','',',,','2022-01-16',',,'),(62,'Buy','Residential','Apartment','0','3200000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',66,1,'Magicbricks','Atria','',',,','2022-01-16',',,'),(63,'Buy','Residential','Apartment','0','3500000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'',67,1,'Magicbricks','','',',,','2022-01-16',',,'),(64,'Rent','Residential','Apartment','3200000','3500000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',68,1,'Reference','','',',,','2022-01-16',',,'),(65,'Rent','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1,2',69,1,'Direct Client','Atria','',',,','2022-01-17',',,'),(66,'Buy','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Viman Nagar',NULL,NULL,'2',70,1,'Magicbricks','Rohan Mithila','',',,','2022-01-17',',,'),(67,'Buy','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Dhanori',NULL,NULL,'2',71,0,'Magicbricks','Mayur Kilbil','',',,','2022-01-17',',,'),(68,'Buy','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Vishrantwadi',NULL,NULL,'3',72,1,'Magicbricks','Uttam Townscapes','',',,','2022-01-17',',,'),(69,'Buy','Residential','Apartment','0','6500000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Dhanori',NULL,NULL,'2',73,1,'Magicbricks','','',',,','2022-01-17',',,'),(70,'Buy','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'2,3',74,1,'Direct Client','','',',,','2022-01-17',',,'),(71,'Rent','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',75,0,'Magicbricks','','',',,','2022-01-18',',,'),(72,'Buy','Residential','Apartment','3000000','3200000','500','575',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',76,1,'Direct Client','','',',,NonFurnished','2022-01-18',',,'),(73,'Buy','Residential','Apartment','300000','3200000','550','575',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',77,1,'WhatsApp','','NEED TO 100% LOAN',',,NonFurnished','2022-01-18',',,'),(74,'Buy','Residential','Apartment','2500000','2700000','500','550',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',78,1,'Direct Client','','LOW BUDGET',',,NonFurnished','2022-01-19',',,'),(75,'Buy','Residential','Apartment','800000','900000','1000','1100',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'3',79,1,'Magicbricks','TIRUPATI COMPAS','',',,NonFurnished','2022-01-19',',,'),(76,'Buy','Residential','Apartment','300000','3200000','600','620',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',80,1,'Direct Client','29 GOLD COST','SOCIETY ',',,NonFurnished','2022-01-19',',,'),(77,'Rent','Residential','Apartment','0','3000000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Lohegaon',NULL,NULL,'1',81,1,'Magicbricks','Shriram Kalash','',',,','2022-01-20',',,'),(78,'Rent','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',82,1,'Magicbricks','','',',,','2022-01-20',',,'),(79,'Buy','Commercial','Shop','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'',83,1,'Magicbricks','','',',,','2022-01-20',',,'),(80,'Rent','Residential','Apartment','0','10000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Dhanori',NULL,NULL,'1',84,1,'Magicbricks','','bhairav nagar lane no. 4 and 5 only',',,','2022-01-20',',,'),(81,'Rent','Residential','Apartment','0','3500000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Dhanori',NULL,NULL,'1',85,1,'JustDial','','',',,','2022-01-21',',,'),(82,'Buy','Residential','Apartment','0','3000000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',86,1,'JustDial','','',',,','2022-01-21',',,'),(83,'Buy','Residential','Apartment','0','4000000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1,2',87,1,'Direct Client','','',',,','2022-01-21',',,'),(84,'Buy','Residential','Apartment','0','2500000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'0',88,1,'Direct Client','','',',,','2022-01-21',',,'),(85,'Rent','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'',89,1,'Magicbricks','','',',,','2022-01-21',',,'),(86,'Buy','Residential','Apartment','0','4800000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'2',90,1,'Broker','Atria','',',,','2022-01-21',',,'),(87,'Buy','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'2',91,1,'Direct Client','Atria','',',,','2022-01-22',',,'),(88,'Buy','Residential','Apartment','0','5000000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'2',92,1,'Direct Client','','',',,','2022-01-21',',,'),(89,'Buy','Residential','Apartment','0','3200000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',93,1,'Direct Client','','',',,','2022-01-23',',,'),(90,'Rent','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',94,1,'Direct Client','','',',,','2022-01-23',',,'),(91,'Rent','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'1',95,1,'Direct Client','','',',,','2022-01-24',',,'),(92,'Buy','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'2',96,1,'Broker','','',',,','2022-01-24',',,'),(93,'Buy','Residential','Apartment','0','5000000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'2',97,1,'Reference','','',',,','2022-01-24',',,'),(94,'Buy','Residential','Apartment','0','4500000','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'2',98,1,'Broker','','',',,','2022-01-24',',,'),(95,'Buy','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Dhanori',NULL,NULL,'2.5,3',99,1,'Magicbricks','Gini Bellina','Req Lower floor',',,','2022-01-25',',,'),(96,'Buy','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'2',100,1,'Broker','Atria','',',,','2022-01-25',',,'),(97,'Buy','Plots','R-Zone Plot','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Tingre Nagar',NULL,NULL,'',101,1,'Direct Client','','',',,','2022-01-26',',,'),(98,'Rent','Residential','Apartment','0','0','0','0',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'Vishrantwadi',NULL,NULL,'2',102,1,'Direct Client','','',',,','2022-01-26',',,');
+/*!40000 ALTER TABLE `lead` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `leadfollowup`
+--
+
+DROP TABLE IF EXISTS `leadfollowup`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `leadfollowup` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `LeadId` int NOT NULL,
+  `Date` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Comment` varchar(1000) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FollowUpBy` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ReminderDate` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ShownBy` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Status` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Close',
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=206 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `leadfollowup`
+--
+
+LOCK TABLES `leadfollowup` WRITE;
+/*!40000 ALTER TABLE `leadfollowup` DISABLE KEYS */;
+INSERT INTO `leadfollowup` VALUES (1,4,'01/01/2022','called client','Prashant','01/01/2022',NULL,'Close'),(2,4,'02/01/2022','call again on 25','XYZ','25/01/2022',NULL,'Open'),(3,5,'01-01-2022','called client, meeting is schedule on 30 Jan','Prashant','30/01/2022',NULL,'Open'),(4,7,'03-01-2022','Called client about property','','05-01-2022',NULL,'Close'),(5,6,'02-01-2022','Call and ask client feedback','','03-01-2022',NULL,'Close'),(6,7,'02-01-2022','want to see property today','','03-01-2022',NULL,'Close'),(7,8,'02-01-2022','Shown Atria B1-507 want to revisit on Saturday','','08/01/2022',NULL,'Close'),(8,9,'02-01-2022','Shown Atria B1-507 want to revisit on Saturday. Want to discuss his finance and more details about flat','','08/01/2022',NULL,'Close'),(9,9,'02-01-2022','Shown Atria B1-507 want to revisit on Saturday','','08/01/2022',NULL,'Close'),(10,10,'03-01-2022','Shown Surabhi darshan liked giver offer 11k. want to revisit today','','03-01-2022',NULL,'Close'),(11,13,'05-01-2022','call again for revisit','','06-01-2022','','Close'),(12,14,'05-01-2022','call regarding shri ram classic','','06-01-2022','','Close'),(13,15,'05-01-2022','liked skylounge call about sky lounge','','06-01-2022','','Close'),(14,16,'06-01-2022','Want to see 2bhk in Brahma Sky city, Wardrobe and Bed must. Flat available with Vishal Broker','','07-01-2022','','Close'),(15,17,'06-01-2022','Atria 2BHK 1450sqft 48 LAcs Photos send. Want to visit on sat/aun','','06-01-2022','','Close'),(16,18,'06-01-2022','want photos first','','07-01-2022','','Close'),(17,20,'06-01-2022','Atria 2bhk 40 Lacs','','09/01/2022','','Close'),(18,19,'06-01-2022','Shown Gangotri Call Tomorrow for follow up ','','07-01-2022','','Close'),(19,10,'08/01/2022','Test follow','Gaikwad Sir','09/01/2022','','Close'),(20,26,'08/01/2022','INTRESTED IN TOKEN','GAIKWAD','09/01/2022','GAIKWAD','Close'),(21,26,'08/01/2022','OWNER WILLING TO TOKEN','','08/01/2022','','Close'),(22,27,'08/01/2022','2 BHK RENTAL   ATRIA ,  B1/507  ,  TOKEN AMOUNT RECEIVED  RS. 5,000/- TO MY ACCOUNT','GAIKWAD','09/01/2022','GAIKWAD','Close'),(23,25,'08/01/2022','WANT FLAT PHOTO   ','GAIKWAD','09/01/2022','','Close'),(24,25,'08/01/2022','','','08/01/2022','','Close'),(25,28,'08/01/2022','HE IS INTRACETED IN FLAT ATRIA A2/203  WAITING FOR NEGOCATION ','GAIKWAD','09/01/2022','GAIKWAD','Close'),(26,28,'08/01/2022','','','08/01/2022','','Close'),(27,29,'10/01/2022','want to see 1bhk for rent in tingre nagar 8 to 10k','','16/01/2022','','Close'),(28,30,'10/01/2022','call not received - cal again on 10/1/2022','','12/01/2022','','Close'),(29,31,'10/01/2022','call not received','','13/01/2022','','Close'),(30,32,'10/01/2022','call not received','','12/01/2022','','Close'),(31,33,'10/01/2022','call not received, call again for Atria','','14/01/2022','','Close'),(32,34,'10/01/2022','Number given to Bipin Sharma','','13/01/2022','','Close'),(33,35,'10/01/2022','call not received enquiry about 1bhk otrt in RK Puram','','12/01/2022','','Close'),(34,36,'11/01/2022','Want to see 2bhk for outrite purchase in tingre nagar','','15/01/2022','','Close'),(35,37,'11/01/2022','want o see shop for purchase today at 1 to 2pm','','11/01/2022','','Close'),(36,38,'11/01/2022','switched off call again','','14/01/2022','','Close'),(37,39,'11/01/2022','kitchen, bed, wardrobe, ac required 3bhk for family at 10am saturday','','15/01/2022','','Close'),(38,37,'11/01/2022','Also Looking for rent. seen mangalam and sunny height from outside','','14/01/2022','','Close'),(39,40,'12/01/2022','Req 1bhk outrite for investement purchase in wagholi number given to bipin','','15/01/2022','','Close'),(40,41,'12/01/2022','coming in pune next week req 2/3bhk for Rent in Viman nagar','','20/01/2022','','Close'),(41,42,'12/01/2022','want to see shop for purchase in tingre nagar today. shown lakdi ghana and sunny height shop','','17/01/2022','','Close'),(42,42,'12/01/2022','want to see shop for purchase in tingre nagar today. shown lakdi ghana and sunny height shop','','12/01/2022','','Close'),(43,30,'12/01/2022','Number given to Bipin sharma reminder again today','','16/01/2022','','Close'),(44,32,'12/01/2022','Want to see shop for outrite on snday','','16/01/2022','','Close'),(45,32,'12/01/2022','','','16/01/2022','','Close'),(46,43,'12/01/2022','want to see 2bhk atria 40 Lacs','','13/01/2022','','Close'),(47,44,'12/01/2022','Seen gangotri 2 times. want rent first then he will purchase the same flat. meeting with owner on Sunday 16/01/2022','','16/01/2022','','Close'),(48,45,'12/01/2022','incoming not available','','14/01/2022','','Close'),(49,37,'12/01/2022','lokking for shop purchase and rental','','13/01/2022','','Close'),(50,46,'12/01/2022','Sent photos on whatsapp coming on saturday for actual visit','','15/01/2022','','Close'),(51,27,'12/01/2022','Finalized with us agreement done','','12/01/2022','','Close'),(52,47,'12/01/2022','want to see shop for otrt coming on saturday','','16/01/2022','','Close'),(53,48,'12/01/2022','want to see 2bhk in mahalaxmi vihar but not in  A wing. coming on saturday','','15/01/2022','','Close'),(54,49,'12/01/2022','1BHK garden flat and 2BHK atria coming on Sunday 10.30am','','16/01/2022','','Close'),(55,49,'12/01/2022','1BHK Garden flat and 2BHK Atrai Coming on Sunday at 10.30am','','16/01/2022','','Close'),(56,37,'12/01/2022','INTRETRESTED IN SHOP  BUT DICUSE WITH HIS MOTHER REGARDING  INCREMENT OF RENT AMOUNT','GAIKWAD','13/01/2022','GAIKWAD','Close'),(57,37,'12/01/2022','INTRETRESTED IN SHOP  BUT DICUSE WITH HIS MOTHER REGARDING  INCREMENT OF RENT AMOUNT NEXT YEAR','GAIKWAD','13/01/2022','GAIKWAD','Close'),(58,37,'12/01/2022','INTRETRESTED IN SHOP  BUT DICUSE WITH HIS MOTHER REGARDING  INCREMENT OF RENT AMOUNT','GAIKWAD','13/01/2022','GAIKWAD','Close'),(59,37,'12/01/2022','','','12/01/2022','','Close'),(60,50,'13/01/2022','want to see 3bhk madhuban, tirupati campus and tingre nagar 2flats on saturday','','15/01/2022','','Close'),(61,31,'13/01/2022','call not receoved','','16/01/2022','','Close'),(62,34,'13/01/2022','Number given to Bipin Sharma','','16/01/2022','','Close'),(63,43,'13/01/2022','call not received','','15/01/2022','','Close'),(64,51,'13/01/2022','Want to see 2bhk for rent in atria','','14/01/2022','','Close'),(65,52,'13/01/2022','call not received','','14/01/2022','','Close'),(66,32,'13/01/2022','','','16/01/2022','','Close'),(67,33,'14/01/2022','Incoming not aval','','24/01/2022','','Open'),(68,37,'14/01/2022','In contactwith Gaikwad Sir','','16/01/2022','','Close'),(69,38,'14/01/2022','call not received','','27/01/2022','','Open'),(70,45,'14/01/2022','will call us if req','','21/02/2022','','Close'),(71,51,'14/01/2022','','','16/01/2022','','Close'),(72,33,'14/01/2022','Dont call again','','31/01/2022','','Open'),(73,53,'14/01/2022','req 3bhk in tingre nagar budget 25K. if he want to see in tingre nagar wil call us','','16/01/2022','','Close'),(74,54,'14/01/2022','Shown Atria A1/203. client is intersted','','15/01/2022','','Close'),(75,55,'14/01/2022','Shown Atria B2/215, A2/202, A1/203 and Prathmesh','','15/01/2022','','Close'),(76,56,'14/01/2022','1RK road no. 13, want photos first','','19/01/2022','','Close'),(77,41,'14/01/2022','want to see 2/3bhk for rent in vn and kn east and north facing req. want to see 10 option in a day. will call us 1day before while he wil coming to see','','16/01/2022','','Close'),(78,41,'14/01/2022','','','16/01/2022','','Close'),(79,39,'15/01/2022','call not received','','16/01/2022','','Close'),(80,40,'15/01/2022','want to see tomorrow 1bhk in wagholi , (Bipin sharma ni call nahi kela aajun)','','16/01/2022','','Close'),(81,43,'15/01/2022','call not received','','24/01/2022','','Open'),(82,46,'15/01/2022','call not received','','16/01/2022','','Close'),(83,48,'15/01/2022','cal not received - cal tomorrow again','','16/01/2022','','Close'),(84,50,'15/01/2022','Todays Appointment 15/01/2022','','16/01/2022','','Close'),(85,54,'15/01/2022','Client given offer 37 LAcs','','21/01/2022','','Close'),(86,55,'15/01/2022','will cal  us','','18/01/2022','','Close'),(87,57,'15/01/2022','req 1bhk furnished or semi furnished in hermes','','16/01/2022','','Close'),(88,58,'15/01/2022','want to see 1bhk otrt in tingre nagar gangotri','','16/01/2022','','Close'),(89,59,'15/01/2022','call not received, call tomorrow again','','16/01/2022','','Close'),(90,57,'15/01/2022','das through 1bhk hermes unfurnished and one through furnished, bro ganesh neptune tmorrow 16/1/2022','','16/01/2022','','Close'),(91,57,'15/01/2022','das through 1bhk hermes unfurnished and one through furnished, bro ganesh neptune tmorrow 16/1/2022','','16/01/2022','','Close'),(92,37,'15/01/2022','In Conttact with Sir','','18/01/2022','','Close'),(93,50,'15/01/2022','','','19/01/2022','','Close'),(94,53,'15/01/2022','he wil call','','20/01/2022','','Close'),(95,29,'16/01/2022','not come today, will call us before coming','','19/01/2022','','Close'),(96,49,'16/01/2022','visit today','','20/01/2022','','Close'),(97,31,'16/01/2022','call not received','','31/01/2022','','Open'),(98,50,'16/01/2022','only req in madhuban budget issue','','20/01/2022','','Close'),(99,46,'16/01/2022','Liked gangotri given token 1 lakh','','22/01/2022','','Close'),(100,41,'16/01/2022','coming in pune next week req 2/3bhk for Rent in Viman nagar','','22/01/2022','','Close'),(101,44,'16/01/2022','liked gangotri want to meeting','','19/01/2022','','Close'),(102,48,'16/01/2022','mahalaxmi penthouse tomorrow at 5pm through rohit agent','','17/01/2022','','Close'),(103,30,'16/01/2022','call not received','','21/01/2022','','Close'),(104,30,'16/01/2022','call not received','','21/01/2022','','Close'),(105,32,'16/01/2022','wil cal us','','22/01/2022','','Close'),(106,34,'16/01/2022','','','24/01/2022','','Open'),(107,37,'16/01/2022','in contact','','19/01/2022','','Close'),(108,39,'16/01/2022','wil cal us','','20/01/2022','','Close'),(109,40,'16/01/2022','call not received','','19/01/2022','','Close'),(110,47,'16/01/2022','busy','','21/01/2022','','Close'),(111,51,'16/01/2022','call not received','','20/01/2022','','Close'),(112,58,'16/01/2022','wil call us','','22/01/2022','','Close'),(113,59,'16/01/2022','call not received','','21/01/2022','','Close'),(114,61,'16/01/2022','no req','','17/01/2022','','Close'),(115,61,'16/01/2022','call not received','','17/01/2022','','Close'),(116,62,'16/01/2022','want to see 1bhk otrt in tingre nagar','','20/01/2022','','Close'),(117,63,'16/01/2022','want to see 1bhk otrt atria 16/1/22','','19/01/2022','','Close'),(118,64,'16/01/2022','want to see 1bhk for purchase in tingre nagar','','17/01/2022','','Close'),(119,65,'17/01/2022','Shown Rahi Homes 1BHK but req 2BHK in Atria only','','18/01/2022','','Close'),(120,64,'17/01/2022','Shown Chandan vazir and Ramkrishna Residency\r\nwant to see mangalam shop 18/1/22','','18/01/2022','','Close'),(121,42,'17/01/2022','shown but not liked req in budget 35 to 40 lacs and main road facing around 300sqft','','31/01/2022','','Open'),(122,66,'17/01/2022','call him tomorrow regarding 2BHK in rohan mithila','','18/01/2022','','Close'),(123,67,'17/01/2022','want details first 2bhk in mayur kilbil only','','21/01/2022','','Close'),(124,68,'17/01/2022','Req 3bhk in Uttam Townscapes 1400sqft 3bhk 7th floor garden facing 1.27 Cr\r\n','','22/01/2022','','Close'),(125,69,'17/01/2022','2BHK for outrite purchase in palladium and gini','','18/01/2022','','Close'),(126,70,'17/01/2022','Seen 3bhk Aknoor flat given offer 65 Lacs, Conference Call Done Owner agree in 68 Lacs. want to see aknoor 2bhk on Saturday','','22/01/2022','','Close'),(127,37,'18/01/2022','Wil cal us','','22/01/2022','','Close'),(128,64,'18/01/2022','seen roadn3 13 agrawal flat want to show his uncle will coming on saturday','','22/01/2022','','Close'),(129,65,'18/01/2022','req only in atria','','20/01/2022','','Close'),(130,66,'18/01/2022','busy','','20/01/2022','','Close'),(131,11,'18/01/2022','Shown Prathmesh apart, Harekrishna apartment. huma residency 2nd floor\r\nnot liked want to see more','','21/01/2022','','Close'),(132,69,'18/01/2022','call not received','','23/01/2022','','Open'),(133,71,'18/01/2022','Hermes Heritage rental call not received','','21/01/2022','','Close'),(134,72,'18/01/2022','PURPOSE INVESTMENT','GAIKWAD','20/01/2022','GAIKWAD','Close'),(135,65,'18/01/2022','','','20/01/2022','','Close'),(136,65,'18/01/2022','','','20/01/2022','','Close'),(137,73,'18/01/2022','1 BHK ROAD NO.14  ANIL AGWRAL FLAT','GAIKWAD','19/01/2022','','Close'),(138,74,'19/01/2022','WANT BUDGET FLAT IN TINGARE NAGAR','GAIKWAD','21/01/2022','','Close'),(139,75,'18/01/2022','SHOWN FLAT IN TIRUPATI CAMPAS ,  PHASE 3 , FLAT NO.303   BY BROKER MR. KAMBLE','GAIKWAD','21/01/2022','GAIKWAD','Close'),(140,76,'19/01/2022','COLLECTED ADHAR CARD COPY  ,  INTRESTED TO BUY 1BHK 29 GOLD COST ','GAIKWAD','21/01/2022','','Close'),(141,39,'20/01/2022','want to visit imperial resi 3bhk 33k on sat','','22/01/2022','','Close'),(142,49,'20/01/2022','In contact with gaikwad sir','','23/01/2022','','Open'),(143,41,'20/01/2022','coming in pune next week req 2/3bhk for Rent in Viman nagar','','23/01/2022','','Open'),(144,77,'20/01/2022','req new flat only if any available in shriram kalash society lohegaon then call him','','30/01/2022','','Open'),(145,78,'20/01/2022','1bhk rental in tingre nagar','','21/01/2022','','Close'),(146,79,'20/01/2022','want to see mangalam shop','','20/01/2022','','Close'),(147,80,'20/01/2022','req 1bhk for rent in bhairav nagar lane no. 4 and 5 only','','21/01/2022','','Close'),(148,81,'21/01/2022','req 1bhk otrt in dhanori 35 lacs package','','22/01/2022','','Close'),(149,82,'21/01/2022','1Bhk for otrt in tingre nagar','','23/01/2022','','Close'),(150,54,'21/01/2022','client given 37 lacs','','31/01/2022','','Open'),(151,75,'21/01/2022','details sent on whatsapp 3bhk in tirupati','','24/01/2022','','Open'),(152,76,'21/01/2022',' INTRESTED TO BUY 1BHK 29 GOLD COST ','','26/01/2022','','Close'),(153,11,'21/01/2022','want to see today maitree park','','26/01/2022','','Close'),(154,30,'21/01/2022','call not received','','06/02/2022','','Close'),(155,47,'21/01/2022','wil call us','','04/02/2022','','Close'),(156,59,'21/01/2022','no ans','','21/01/2022','','Close'),(157,71,'21/01/2022','lie in couple, not available any flat for them','','21/01/2022','','Close'),(158,74,'21/01/2022','call not received','','27/01/2022','','Open'),(159,78,'21/01/2022','In contact with Gaikwad sir','','23/01/2022','','Open'),(160,80,'21/01/2022','','','22/01/2022','','Close'),(161,46,'21/01/2022','finalized with us gangotri','','21/01/2022','','Close'),(162,83,'21/01/2022','coming tomoorw','','22/01/2022','','Close'),(163,84,'21/01/2022','want to see 1hk tingre nagar today','','21/01/2022','','Close'),(164,85,'21/01/2022','want to see 1bhk in tingre nagar and dhanori 30 lacs','','22/01/2022','','Close'),(165,70,'21/01/2022','','','21/01/2022','','Close'),(166,86,'21/01/2022','want to see 2bhk atria 48 Lacs','','22/01/2022','','Close'),(167,87,'21/01/2022','want to see atria 2bhk 48 lacs','','23/01/2022','','Open'),(168,88,'21/01/2022','want to see 2bhk in tingre nagar','','24/01/2022','','Open'),(169,87,'22/01/2022','2bhk otrt in atria soc today at 4pm','','22/01/2022','','Close'),(170,87,'22/01/2022','2bhk otrt in atria soc today at 4pm','','22/01/2022','','Close'),(171,70,'22/01/2022','Coming at 12.30pm to revisit aknoor 3bhk otrt','','22/01/2022','','Close'),(172,70,'22/01/2022','Coming at 12.30pm to revisit aknoor 3bhk otrt','','26/01/2022','','Close'),(173,70,'22/01/2022','Coming at 12.30pm to revisit aknoor 3bhk otrt','','22/01/2022','','Close'),(174,86,'22/01/2022','call not received','','23/01/2022','','Open'),(175,39,'22/01/2022','no ans - want to visit imperial resi 3bhk 33k on sat','','23/01/2022','','Open'),(176,68,'22/01/2022','req proper 3bhk in uttam townscape and higher floor - if any option is aval then call her','','03/02/2022','','Close'),(177,84,'22/01/2022','Shown 1HK road no. 13 and chandan vazir liked 1 hk will let us know','','25/01/2022','','Close'),(178,19,'22/01/2022','want to see','','22/01/2022','','Open'),(179,85,'23/01/2022','shown 1bhk chandan vazir, atria, huma, want to see today dhanori today 23/01/2022','','27/01/2022','','Open'),(180,85,'23/01/2022','shown 1bhk chandan vazir, atria, huma, want to see today dhanori today 23/01/2022','','23/01/2022','','Open'),(181,78,'23/01/2022','seen 1bhk 4 flat in tingre nagar- 23/1/2022','','27/01/2022','','Open'),(182,89,'23/01/2022','want to see 1bhk for otrt purchase','','26/01/2022','','Close'),(183,89,'23/01/2022','want to see 1bhk for otrt purchase','','23/01/2022','','Open'),(184,90,'23/01/2022','want to see 1/2BHK for Rent in Tingre semi furnished or  furnished for company guest house coming tomorrow 24/1/22','','24/01/2022','','Open'),(185,91,'24/01/2022','want to see 2BHK for rent and for purchase','','25/01/2022','','Open'),(186,82,'24/01/2022','shown chandan, atria, huma residency want to see today aman apartment 38 lacs today','','27/01/2022','','Close'),(187,85,'24/01/2022','want to see 1bhk tirupati aangan and tirupati park on saturday 29/1/22','','29/01/2022','','Open'),(188,34,'24/01/2022','call not received want to see rohan abhilasha 2bhk garden facing with 2 balcony','','31/01/2022','','Open'),(189,82,'24/01/2022','want to see aman aprt 1bhk 38 lacs','','25/01/2022','','Close'),(190,92,'24/01/2022','Shown Atria 3 Flat and Maitri PArk 2 BHK 24/1/2022. call tomorrow again','','25/01/2022','','Open'),(191,89,'24/01/2022','seen more option but not liked wnat to see more','','25/01/2022','','Open'),(192,93,'24/01/2022','want to see 2bhk for purchase in tingre nagar ref client','','30/01/2022','','Open'),(193,94,'24/01/2022','7796899549 Client Ref Tarun Broker req 2bhk for otrt in tingre nagar','','26/01/2022','','Open'),(194,87,'24/01/2022','2bhk shourya 304 ,  2 bhk shreeram classic , & 2bhk maitri ','','26/01/2022','gaikwad','Close'),(195,95,'25/01/2022','req 2.5bhk and 3bhk for otrt in gini bellina only','','29/01/2022','','Open'),(196,96,'25/01/2022','Seen Atria 45 Lacs and 48 LAcs','','29/01/2022','','Open'),(197,11,'26/01/2022','seen not liked want to see more','','31/01/2022','','Open'),(198,70,'26/01/2022','Finalized 3BHK Aknoor with us in contact with gaikwad sir','','30/01/2022','','Open'),(199,70,'26/01/2022','Finalized 3BHK Aknoor with us in contact with gaikwad sir','','30/01/2022','','Open'),(200,76,'26/01/2022','want to see only in 29goldcoast cal if any flat aval','','30/01/2022','','Open'),(201,82,'26/01/2022','want to see 1bhk aman apartment','','29/01/2022','','Open'),(202,84,'26/01/2022','want to see 1bhk otrt in pooja apartment','','27/01/2022','','Open'),(203,97,'26/01/2022','want 2  to 3 gunthe lot for purchase','','30/01/2022','','Open'),(204,89,'26/01/2022','want to see 1bhk flat today through rao broker','','26/01/2022','','Open'),(205,98,'26/01/2022','want to see 2bhk in tirupati campus and dreams residency','','27/01/2022','','Open');
+/*!40000 ALTER TABLE `leadfollowup` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `lease`
+--
+
+DROP TABLE IF EXISTS `lease`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `lease` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `OwnerName` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `OwnerPhoneNo` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `OwnerEmail` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `OwnerPAN` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `OwnerAadharNo` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `OwnerAddress` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `TenantName` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `TenantPhoneNo` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `TenantEmail` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `TenantPAN` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `TenantAadharNo` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `TenantAddress` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PropertyUnitNo` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PropertySociety` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PropertyLandmark` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PropertySurveyNo` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PropertyLocation` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PropertyCity` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PropertyPincode` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PropertyAddressOther` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PropertyType` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PropertySubType` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PropertyBedrooms` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `TokenNo` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `GRNNo` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Duration` int DEFAULT NULL,
+  `StartDate` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `EndDate` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `LockinPeriod` int DEFAULT NULL,
+  `Escalation1` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Escalation2` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Escalation3` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Remark` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Rent` int DEFAULT NULL,
+  `Deposit` int DEFAULT NULL,
+  `Brokerage` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Source` varchar(20) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `IsActive` tinyint DEFAULT NULL,
+  `CreatedDate` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `NoticePeriod` int DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `lease`
+--
+
+LOCK TABLES `lease` WRITE;
+/*!40000 ALTER TABLE `lease` DISABLE KEYS */;
+INSERT INTO `lease` VALUES (1,'Onwer1',NULL,NULL,NULL,NULL,NULL,'tenant1',NULL,NULL,NULL,NULL,NULL,'303','Goodwill Galaxy','Opp atria','29','Tingre Nagar','Pune','411015','prop other address','System.Data.DataRowView','System.Data.DataRowView','2','445','GRN67890',11,'30/01/2022','30/12/2022',2,'10%','12%','15%','test lease',15000,40000,'12000',NULL,0,'29/01/2022',NULL),(2,'Prashant Tale','8888849047','prashant.tale@live.com','AJWPT5348R','1234-5678-1234','','Vijay Singh','6655443322','vijay.singh@gmail.com','DFGHK3452R','123456789045','tenent address','303','Palladium Exotica','Dhanori road','','Dhanori','Pune','','','System.Data.DataRowView','System.Data.DataRowView','2','445','GRN3344',0,'30/01/2022','30/11/2023',0,'10%','12%','15%','test lease',15000,30000,'15000',NULL,1,'30/01/2022',NULL),(3,'test owner name','1122334455','emailo','ASDFG4534R','12345678907','addresso','test tenant name','3344556677','emailT','PANT','aadharT','addressT','404','Mangalam','Mail road','27','Tingre Nagar','Pune','411015','prop add other','Residential','Apartment','2.5','556','GRN445',22,'30/01/2022','30/11/2023',2,'5%','10%','15%','test lease',15000,30000,'20000','Direct',1,'30/01/2022',NULL),(4,'Rathi','7766554433','rathi@gmail.com','ASDHO5348R','34567123123','rathiaddress','tambe','7788665544','tambe@gmail.com','DFGHS4532R','3344566563434','tambe address','101','XYz','main road','29','xyz nagar','Pune','411015','other address','Residential','Apartment','3','556','GRN778',11,'30/01/2022','30/12/2022',2,'','','','test lease',20000,30000,'20000','Broker',1,'30/01/2022',NULL),(5,'owner1','1111111111','','','','','xyz','6677554433','','','','','','Goodwill Galaxy','','','Tingre Nagar','Pune','','','Residential','Apartment',NULL,'','',0,'30/01/2022','30/01/2022',0,'','','','',0,0,'',NULL,1,'30/01/2022',NULL),(6,'xyz','4455667788','','','','','sda','2233445566','','','','','101','Goodwill Galaxy','Opp Atria','29','Tingre Nagar','Pune','','','Residential','Apartment','2','890','45678',11,'02/02/2022','25/02/2022',1,'','','','test',10000,30000,'100000','Broker',1,'02/02/2022',NULL),(7,'Temp Owner Name','7865431234','','GHJWU5634R','4567789012345','Temp Owner Address','Temp Tenant Name','4564564564','','GHJKU5432R','','Temp Tenant Address','201','Atria','Lane no 13','29','Tingre Nagar','Pune','','','Residential','Apartment',NULL,'667','GRN5677',22,'05/02/2022','05/12/2023',0,'10%','15%','','test for notice period',15000,30000,'15000','Direct',1,'05/02/2022',1);
+/*!40000 ALTER TABLE `lease` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `location`
+--
+
+DROP TABLE IF EXISTS `location`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `location` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `Location` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `location`
+--
+
+LOCK TABLES `location` WRITE;
+/*!40000 ALTER TABLE `location` DISABLE KEYS */;
+INSERT INTO `location` VALUES (1,'Tingre Nagar'),(2,'Dhanori'),(3,'Vishrantwadi'),(4,'Viman Nagar'),(5,'Wadgaon Sheri'),(6,'Chandan Nagar'),(7,'Kalyani Nagar'),(8,'Kharadi'),(9,'Wagholi'),(10,'Lohegaon'),(11,'Nagpur Chawl'),(12,'Yerwada'),(13,'Band Garden'),(15,'Mundhwa'),(16,'Gokul Nagar'),(17,'Hadapsar'),(18,'Munjaba Wasti'),(19,'Kamal Park'),(20,'Rakshak Nagar'),(21,'Bhairav Nagar'),(22,'Porwal Road'),(23,NULL),(24,NULL),(25,NULL);
+/*!40000 ALTER TABLE `location` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `owner`
+--
+
+DROP TABLE IF EXISTS `owner`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `owner` (
+  `Name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PhoneNo1` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PhoneNo2` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Email` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Salutation` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `FlatNo` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Society` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Landmark` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Pincode` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Location` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `City` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `State` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Country` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `DOB` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `IsBroker` tinyint NOT NULL DEFAULT '0',
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `owner`
+--
+
+LOCK TABLES `owner` WRITE;
+/*!40000 ALTER TABLE `owner` DISABLE KEYS */;
+INSERT INTO `owner` VALUES ('aaaa','1234567899','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,7,0),('Abhi Raj','1234567899','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,8,0),('Vaibhav karale','9876543211','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,9,0),('abc','7766554433','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,10,0),('sdds','1122334455','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,11,0),('ttt','6756453423','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,12,0),('ssss','3243546576','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,13,0),('Neer Tale','1234567890','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,14,0),('Shital Tale','9130009047','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,15,0),('Test Owner','7689012345','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,16,0),('Test Prop Owner','6785432190','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,17,0),('Test Prop Owner','7766557891','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,18,0),('Vishal Gupta','8877665544','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,19,1),('Prashant Tale','8888849047','9130009047','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,20,1),('test prop','3245671234','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,21,0),('qwe','1234567890','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,22,0),('dfdsf','1234567890','','',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,23,0);
+/*!40000 ALTER TABLE `owner` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `property`
+--
+
+DROP TABLE IF EXISTS `property`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `property` (
+  `Id` int NOT NULL AUTO_INCREMENT,
+  `OwnerId` int NOT NULL,
+  `FlatNo` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Landmark` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Location` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Pincode` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `OtherAddress` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `City` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `TransactionType` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `PropertyType` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `PropertySubType` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `BathroomCount` int DEFAULT NULL,
+  `BalconyCount` int DEFAULT NULL,
+  `BedroomCount` int DEFAULT NULL,
+  `CoveredParkingCount` int DEFAULT NULL,
+  `OpenParkingCount` int DEFAULT NULL,
+  `FurnitureStatus` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `TotalFloor` int DEFAULT NULL,
+  `PropertyFloor` int DEFAULT NULL,
+  `CarpetArea` int DEFAULT NULL,
+  `CarpetAreaUnit` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `BuiltUpArea` int DEFAULT NULL,
+  `BuiltUpAreaUnit` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `SuperBuiltUpArea` int DEFAULT NULL,
+  `SuperBuiltUpAreaUnit` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PropertyAge` int DEFAULT NULL,
+  `AvailableRentFrom` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `WillingRentFor` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ConstructionStatus` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PossessionInYears` int DEFAULT NULL,
+  `KeyPlacedAt` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `OnlinePublished` tinyint(1) NOT NULL DEFAULT '0',
+  `IsActive` tinyint(1) NOT NULL DEFAULT '1',
+  `Source` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `Remark` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `RentPerMonth` int DEFAULT NULL,
+  `Deposit` int DEFAULT NULL,
+  `SellingPrice` bigint DEFAULT NULL,
+  `CreatedDate` date DEFAULT NULL,
+  `Society` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `CommercialUse` tinyint DEFAULT NULL,
+  `BalconyFacing` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `MainDoorDirection` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `BrokerageAgreed` tinyint DEFAULT NULL,
+  `BrokerageDetail` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `property`
+--
+
+LOCK TABLES `property` WRITE;
+/*!40000 ALTER TABLE `property` DISABLE KEYS */;
+INSERT INTO `property` VALUES (9,18,'asd','asd','Tingre Nagar','asd','asd','Pune','Rent','Residential','Apartment',2,2,2,1,0,'SemiFurnished',4,4,650,'sq.ft.',700,'sq.ft.',1345,'sq.ft.',0,NULL,'Student',NULL,0,'sdf',0,1,'Direct Client','sdf',20000,50000,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL),(10,20,'A-403','sdfsdf','Tingre Nagar','411015','sdfsdf','Pune','Rent','Residential','Apartment',2,2,2,1,0,'SemiFurnished',4,4,650,'sq.ft.',800,'sq.ft.',1345,'sq.ft.',8,'31/01/2022','Student',NULL,0,'',0,1,'Direct Client','Test property',20000,50000,0,'2022-01-09',NULL,NULL,NULL,NULL,NULL,NULL),(11,9,'103','df','Tingre Nagar','','','Pune','Rent','Residential','Apartment',2,2,NULL,1,0,'',0,0,0,'sq.ft.',0,'sq.ft.',0,'sq.ft.',0,'12/01/2022','',NULL,0,'',0,1,'Direct Client','',0,0,0,'2022-01-12','sdfsd',NULL,NULL,NULL,NULL,NULL),(12,10,'203','abc','Tingre Nagar','11111','','Pune','Rent','Residential','Apartment',2,2,2,1,0,'SemiFurnished',4,4,0,'sq.ft.',0,'sq.ft.',1345,'sq.ft.',8,'31/01/2022','Family,Bachelor,Student',NULL,0,'Security',0,1,'Direct Client','test propert',20000,50000,0,'2022-01-12','abc',NULL,NULL,NULL,NULL,NULL),(13,11,'203','sdf','Tingre Nagar','111111','dfsdf','Pune','Rent','Residential','Apartment',2,1,2,1,0,'NonFurnished',4,4,0,'sq.ft.',0,'sq.ft.',1345,'sq.ft.',8,'13/01/2022','Family,Bachelor,Student',NULL,0,'Security',0,1,'Direct Client','test',20000,50000,0,'2022-01-13','afsdf',NULL,NULL,NULL,NULL,NULL),(14,12,'303','road no 12','Tingre Nagar','','','Pune','Rent','Residential','Apartment',1,1,1,1,0,'NonFurnished',3,2,0,'sq.ft.',600,'sq.ft.',0,'sq.ft.',12,'13/01/2022','Family,Bachelor,Student',NULL,0,'Call Owner',0,1,'Direct Client','Text Property',12000,30000,0,'2022-01-13','mangalam',NULL,NULL,NULL,NULL,NULL),(15,13,'404','road no 13','Tingre Nagar','','','Pune','Sell','Residential','Apartment',2,2,2,1,0,'SemiFurnished',4,4,650,'sq.ft.',750,'sq.ft.',1345,'sq.ft.',8,'13/01/2022','','ReadyToMove',0,'Call Owner',0,1,'Direct Client','test prop',0,0,6500000,'2022-01-13','abc galaxy',NULL,NULL,NULL,NULL,NULL),(16,14,'A-506','','Gokul Nagar','','','Pune','Rent','Residential','Apartment',1,1,1,1,0,'NonFurnished',10,3,0,'sq.ft.',500,'sq.ft.',0,'sq.ft.',1,'17/01/2022','Family,Bachelor,Student',NULL,0,'Security',0,1,'Direct Client','',12000,25000,0,'2022-01-17','',0,'','',0,''),(17,15,'202','','Munjaba Wasti','','','Pune','Rent','Residential','Apartment',2,2,2,1,0,'SemiFurnished',4,2,0,'sq.ft.',800,'sq.ft.',0,'sq.ft.',10,'17/01/2022','Family,Bachelor,Student',NULL,0,'Call owner',0,1,'Broker','Test property',15000,50000,0,'2022-01-17','Shourya Homes',NULL,NULL,NULL,NULL,NULL),(18,16,'303','','Tingre Nagar','','','Pune','Sell','Commercial','Shop',0,0,NULL,0,0,'SemiFurnished',4,0,0,'sq.ft.',232,'sq.ft.',0,'sq.ft.',15,'18/01/2022','','ReadyToMove',0,'Open to show',1,1,'Magicbricks','Test Property updated',0,0,6000000,'2022-01-18','Mangalam',NULL,NULL,NULL,NULL,NULL),(19,18,'303','Main road','Rakshak Nagar','','','Pune','Rent','Residential','Apartment',1,1,1,1,0,'SemiFurnished',6,3,0,'sq.ft.',700,'sq.ft.',0,'sq.ft.',12,'18/01/2022','Family,Bachelor,Student',NULL,0,'Security',0,1,'Broker','test prop',15000,50000,0,'2022-01-18','Goodwill Galaxy',1,'Garden/Amenity','West',0,'3%'),(20,19,'404','Road No 13','Bhairav Nagar','','','Pune','Sell','Residential','Apartment',2,2,2,1,0,'SemiFurnished',4,4,0,'sq.ft.',700,'sq.ft.',0,'sq.ft.',15,'22/01/2022','','ReadyToMove',0,'Call Broker',0,1,'Broker','Test Broker Property',0,0,6500000,'2022-01-22','R K Puram',0,'Road','West',1,'2%'),(21,20,'303','','Porwal Road','','','Pune','Sell','Residential','Apartment',2,2,2,1,0,'SemiFurnished',6,3,0,'sq.ft.',800,'sq.ft.',0,'sq.ft.',3,'22/01/2022','','ReadyToMove',0,'Call Broker',0,1,'Broker','test broker prop',0,0,7000000,'2022-01-22','Landmark Tower',1,'Garden/Amenity','East',1,''),(22,21,'403','Opp Atria Society','Tingre Nagar','','','Pune','Rent','Residential','Apartment',2,2,2,1,0,'SemiFurnished',4,4,0,'sq.ft.',1345,'sq.ft.',0,'sq.ft.',8,'23/01/2022','Family,Bachelor,Student',NULL,0,'Security',0,1,'Direct Client','Test prop',20000,50000,0,'2022-01-23','Goodwill Galaxy',0,'Back','East',1,'5%'),(23,22,'','Road No 10B','Tingre Nagar','','','Pune','Rent','Residential','Apartment',1,0,0,0,0,'',2,0,0,'sq.ft.',450,'sq.ft.',0,'sq.ft.',0,'23/01/2022','Family,Bachelor,Student',NULL,0,'',0,1,'Direct Client','dasd',0,0,0,'2022-01-23','Goodwill Galaxy',0,'','',0,''),(24,23,'','sdfafs','Tingre Nagar','','','Pune','Rent','Residential','Apartment',1,0,0,0,0,'',2,0,0,'sq.ft.',450,'sq.ft.',0,'sq.ft.',0,'23/01/2022','Family,Bachelor,Student',NULL,0,'Owner',0,1,'Direct Client','sdfdf',6500,0,0,'2022-01-23','',0,'','',0,'');
+/*!40000 ALTER TABLE `property` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `propertytype`
+--
+
+DROP TABLE IF EXISTS `propertytype`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `propertytype` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `PropertyType` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `PropertySubType` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `propertytype`
+--
+
+LOCK TABLES `propertytype` WRITE;
+/*!40000 ALTER TABLE `propertytype` DISABLE KEYS */;
+INSERT INTO `propertytype` VALUES (1,'Residential','Apartment'),(2,'Residential','Row House'),(3,'Commercial','Shop'),(4,'Commercial','Showroom'),(5,'Residential','Bunglow'),(6,'Residential','Pent House'),(7,'Residential','PG'),(8,'Commercial','Office Space'),(9,'Commercial','Godown/Warehouse'),(10,'Plots','N.A. Plot'),(11,'Plots','R-Zone Plot'),(12,'Plots','Agriculture Plot'),(13,'Plots','Industrial Plot');
+/*!40000 ALTER TABLE `propertytype` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `role`
+--
+
+DROP TABLE IF EXISTS `role`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `role` (
+  `id` int DEFAULT NULL,
+  `role` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `role`
+--
+
+LOCK TABLES `role` WRITE;
+/*!40000 ALTER TABLE `role` DISABLE KEYS */;
+INSERT INTO `role` VALUES (1,'Administrator'),(2,'BusinessUser'),(3,'OnsiteUser');
+/*!40000 ALTER TABLE `role` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `society`
+--
+
+DROP TABLE IF EXISTS `society`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `society` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `SocietyName` varchar(500) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `society`
+--
+
+LOCK TABLES `society` WRITE;
+/*!40000 ALTER TABLE `society` DISABLE KEYS */;
+INSERT INTO `society` VALUES (1,'Goodwill Galaxy'),(2,'Atria'),(3,'29 Gold Coast'),(4,'Shourya Homes'),(5,'Mangalam'),(6,'Palladium Exotica'),(7,'R K Puram'),(8,'Landmark Tower');
+/*!40000 ALTER TABLE `society` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `source`
+--
+
+DROP TABLE IF EXISTS `source`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `source` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `Source` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `source`
+--
+
+LOCK TABLES `source` WRITE;
+/*!40000 ALTER TABLE `source` DISABLE KEYS */;
+INSERT INTO `source` VALUES (1,'Direct Client'),(2,'Broker'),(3,'Magicbricks'),(4,'Housing.com'),(5,'JustDial'),(6,'Facebook'),(7,'WhatsApp'),(8,'Reference'),(9,NULL),(10,NULL);
+/*!40000 ALTER TABLE `source` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `user` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `firstname` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `lastname` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phoneno1` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci DEFAULT NULL,
+  `email` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `password` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `roleid` int NOT NULL,
+  `phoneno2` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (6,'Prashant','Tale','8888849047','prashant.tale@live.com','1',1,''),(7,'Shital','Tale','9130009047','shitaltale02@gmail.com','abcd',2,'8888849047');
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2022-02-07 10:19:57
